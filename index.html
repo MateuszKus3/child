@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+<button>przycisk</button>
+<p></p>
+<div></div>
+
+
+    <script>
+const div = document.querySelector('div');
+const btn = document.querySelector('button');
+const pEle = document.querySelector('p');
+const numbers = ['2, 7, 11, 9, 8, 2, 5, 9'];
+
+btn.addEventListener('click', function(){
+const ol = document.createElement('ol');
+div.appendChild(ol);
+for (let i = 0; i<numbers.length; i++){
+numbers.sort(function(a, b){
+return a - b;
+
+});
+if(numbers[i] % 2 == 0){
+    const li = document.createElement('li');
+    li.style.color = '#f00';
+    li.style.fontWeight = 'bold';
+    li.style.cssText += 'margin: 1em; background-color: #fff;';
+    li.innerText = 'element number' + (i+1) + 'tablicy to ' + numbers[1];
+    ol.appendChild(li);
+}
+
+
+}
+
+
+});
+
+
+
+    </script>
+
+
+
+</body>
+</html>
